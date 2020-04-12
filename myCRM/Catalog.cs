@@ -21,16 +21,11 @@ namespace myCRM
 
         public Catalog(DbSet<T> set )
         {
-
-
-
+                       
             InitializeComponent();
-          
-          //  this.db = db;
+                 
            this.set = set;
-           
-            set.Load();
-            dataGridView1.DataSource = set.Local.ToBindingList();
+            LoadDataBase();
         }
 
         private void Catalog_Load(object sender, EventArgs e)
@@ -44,12 +39,15 @@ namespace myCRM
             if (typeof(T)==typeof(Customer))
             {
                 var frCustomer = new CustomerForms();
+                frCustomer.AddCustomer += LoadDataBase;
                 frCustomer.Show();
 
             } else
                 if (typeof(T) == typeof(Seller))
             {
                 var frSeller = new SellerForms();
+                frSeller.AddCustomer += LoadDataBase;
+
                 frSeller.Show();
             } else
 
@@ -64,7 +62,6 @@ namespace myCRM
 
         private void LoadDataBase()
         {
-            //this.set = set;
             
             set.Load();
             dataGridView1.DataSource = set.Local.ToBindingList();

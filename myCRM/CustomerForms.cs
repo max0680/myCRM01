@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using myCRM_BL.Control;
 using myCRM_BL.Model;
 
 namespace myCRM
@@ -14,6 +15,9 @@ namespace myCRM
     public partial class CustomerForms : Form
     {
        public Customer Customer { get; set; }
+
+        public event Action AddCustomer;
+        
         public CustomerForms()
         {
             InitializeComponent();
@@ -29,6 +33,14 @@ namespace myCRM
         {
             var c = new Customer();
             c.Name = textBox1.Text;
+
+            var Control = new ControlDataBase<Customer>();
+            Control.addProduct(c);
+
+
+
+            AddCustomer();
+            
             Close();
 
         }

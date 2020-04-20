@@ -26,9 +26,8 @@ namespace myCRM
             c.Name = textBox1.Text;
 
             var Control = new ControlDataBase<Seller>();
-            Control.addProduct(c);
-
-
+            Control.AddToCatalog(c);
+            
 
             AddCustomer();
 

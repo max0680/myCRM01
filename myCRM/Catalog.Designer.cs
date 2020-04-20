@@ -31,6 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btAdd = new System.Windows.Forms.Button();
             this.btEdit = new System.Windows.Forms.Button();
+            this.btDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,17 +41,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(1161, 689);
+            this.dataGridView1.Size = new System.Drawing.Size(1742, 1060);
             this.dataGridView1.TabIndex = 0;
             // 
             // btAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(45, 711);
+            this.btAdd.Location = new System.Drawing.Point(68, 1094);
+            this.btAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(75, 23);
+            this.btAdd.Size = new System.Drawing.Size(112, 35);
             this.btAdd.TabIndex = 1;
             this.btAdd.Text = "Добавить";
             this.btAdd.UseVisualStyleBackColor = true;
@@ -58,21 +61,35 @@
             // 
             // btEdit
             // 
-            this.btEdit.Location = new System.Drawing.Point(172, 711);
+            this.btEdit.Location = new System.Drawing.Point(258, 1094);
+            this.btEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(75, 23);
+            this.btEdit.Size = new System.Drawing.Size(112, 35);
             this.btEdit.TabIndex = 2;
-            this.btEdit.Text = "Удалить";
+            this.btEdit.Text = "Изменить";
             this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
+            // 
+            // btDelete
+            // 
+            this.btDelete.Location = new System.Drawing.Point(429, 1094);
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(129, 35);
+            this.btDelete.TabIndex = 3;
+            this.btDelete.Text = "Delete";
+            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // Catalog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 763);
+            this.ClientSize = new System.Drawing.Size(1746, 1174);
+            this.Controls.Add(this.btDelete);
             this.Controls.Add(this.btEdit);
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Catalog";
             this.Text = "Catalog";
             this.Load += new System.EventHandler(this.Catalog_Load);
@@ -86,5 +103,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.Button btEdit;
+        private System.Windows.Forms.Button btDelete;
     }
 }

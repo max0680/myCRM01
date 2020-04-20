@@ -34,13 +34,17 @@ namespace myCRM
             product.Count = Convert.ToInt32( numericUpDown2.Value);
            
             var Control = new ControlDataBase<Product>();
-            Control.addProduct(product);
+            Control.AddToCatalog(product);
             
             AddProduct();
             Close();
 
 
         }
+
+
+
+
 
 
     }

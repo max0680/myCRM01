@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using myCRM_BL.Model;
+using myCRM_BL.Control;
 
 namespace myCRM
 {
@@ -21,7 +22,7 @@ namespace myCRM
 
         public Catalog(DbSet<T> set )
         {
-                       
+                    
             InitializeComponent();
                  
            this.set = set;
@@ -67,7 +68,36 @@ namespace myCRM
             dataGridView1.DataSource = set.Local.ToBindingList();
         }
 
+        private void btEdit_Click(object sender, EventArgs e)
+        {
 
 
+        }
+
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+
+            if (typeof(T) == typeof(Customer))
+            {
+               var clDB = new ControlDataBase<T>();
+              //  clDB.deleteFromCatalog(Customer);
+            }
+            else
+               if (typeof(T) == typeof(Seller))
+            {
+
+              
+            }
+            else
+
+            if (typeof(T) == typeof(Product))
+            {
+              
+
+            }
+
+
+            LoadDataBase();
+        }
     }
 }

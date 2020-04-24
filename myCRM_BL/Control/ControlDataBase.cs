@@ -29,34 +29,29 @@ namespace myCRM_BL.Control
             context.SaveChanges();                           
         }
 
-        public void DeleteFromCatalog(TEntity entity)
+        public void DeleteFromCatalog(T entity ) 
         {
-            context = new myCRMContext();
-            
-
-            var dbSet = context.Set(typeof(T));
-          // var entity = dbSet.Create();
+        myCRMContext context1;
+            context1 = new myCRMContext();            
+           // var dbSet = context.Set(typeof(T));
+            // var entity = dbSet.Create();
             //dbSet.Remove(entity);
             //DbEntityEntry entry = context.Entry(entity);
             //entry.CurrentValues.SetValues(p);
-            var i = dbSet.Find(1);
-            context.Entry<T>(entity).State=EntityState.Deleted;
+           // var i = dbSet. Find(1);
+            context1.Entry<T>(entity).State=EntityState.Deleted;
             
-            context.SaveChanges();
-                                 
+            context1.SaveChanges();                               
         }
 
-        public T FindSelectedItem (int id)
+        public T FindSelectedItem(int id)
         {
-            context = new myCRMContext();
-           
-            //var dbSet = context.Set(typeof(T));
-            //var entity = dbSet.Create();
-            ////dbSet.se
-
-            ////var o=context.Checks.
-            return T;
-
+            myCRMContext context2 = new myCRMContext();
+            var dbSet = context2.Set<T>().Find(id);
+            // //var entity = dbSet.Create();
+          // T i =dbSet.Find(id);
+            // ////var o=context.Checks.
+             return dbSet; 
         }
 
 

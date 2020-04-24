@@ -80,7 +80,9 @@ namespace myCRM
             if (typeof(T) == typeof(Customer))
             {
                var clDB = new ControlDataBase<T>();
-              //  clDB.deleteFromCatalog(Customer);
+
+                
+                clDB.DeleteFromCatalog(clDB.FindSelectedItem(1));
             }
             else
                if (typeof(T) == typeof(Seller))

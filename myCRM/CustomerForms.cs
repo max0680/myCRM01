@@ -16,7 +16,7 @@ namespace myCRM
     {
        public Customer Customer { get; set; }
 
-        public event Action AddCustomer;
+        public event Action UpdateTable;
         
         public CustomerForms()
         {
@@ -39,7 +39,7 @@ namespace myCRM
 
 
 
-            AddCustomer();
+            UpdateTable();
             
             Close();
 

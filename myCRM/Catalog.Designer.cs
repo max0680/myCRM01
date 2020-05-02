@@ -41,19 +41,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView1.Location = new System.Drawing.Point(2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(1742, 1060);
+            this.dataGridView1.Size = new System.Drawing.Size(1161, 689);
             this.dataGridView1.TabIndex = 0;
             // 
             // btAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(68, 1094);
-            this.btAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btAdd.Location = new System.Drawing.Point(45, 711);
             this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(112, 35);
+            this.btAdd.Size = new System.Drawing.Size(75, 23);
             this.btAdd.TabIndex = 1;
             this.btAdd.Text = "Добавить";
             this.btAdd.UseVisualStyleBackColor = true;
@@ -61,10 +60,10 @@
             // 
             // btEdit
             // 
-            this.btEdit.Location = new System.Drawing.Point(258, 1094);
-            this.btEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btEdit.Location = new System.Drawing.Point(172, 711);
             this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(112, 35);
+            this.btEdit.Size = new System.Drawing.Size(75, 23);
             this.btEdit.TabIndex = 2;
             this.btEdit.Text = "Изменить";
             this.btEdit.UseVisualStyleBackColor = true;
@@ -72,9 +71,11 @@
             // 
             // btDelete
             // 
-            this.btDelete.Location = new System.Drawing.Point(429, 1094);
+            this.btDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btDelete.Location = new System.Drawing.Point(286, 711);
+            this.btDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(129, 35);
+            this.btDelete.Size = new System.Drawing.Size(86, 23);
             this.btDelete.TabIndex = 3;
             this.btDelete.Text = "Delete";
             this.btDelete.UseVisualStyleBackColor = true;
@@ -82,14 +83,13 @@
             // 
             // Catalog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1746, 1174);
+            this.ClientSize = new System.Drawing.Size(1164, 763);
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.btEdit);
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Catalog";
             this.Text = "Catalog";
             this.Load += new System.EventHandler(this.Catalog_Load);

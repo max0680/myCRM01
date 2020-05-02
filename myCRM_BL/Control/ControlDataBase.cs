@@ -14,8 +14,6 @@ namespace myCRM_BL.Control
         myCRMContext context;
     
       
-
-
         public void AddToCatalog( T p )
         {            
             context = new myCRMContext();
@@ -29,30 +27,20 @@ namespace myCRM_BL.Control
             context.SaveChanges();                           
         }
 
-        public void DeleteFromCatalog(T entity ) 
+        public void DeleteFromCatalog(int id) 
         {
-        myCRMContext context1;
-            context1 = new myCRMContext();            
-           // var dbSet = context.Set(typeof(T));
-            // var entity = dbSet.Create();
-            //dbSet.Remove(entity);
-            //DbEntityEntry entry = context.Entry(entity);
-            //entry.CurrentValues.SetValues(p);
-           // var i = dbSet. Find(1);
-            context1.Entry<T>(entity).State=EntityState.Deleted;
+       
+            context = new myCRMContext();
+
+            var dbSet = context.Set<T>().Find(id);
             
-            context1.SaveChanges();                               
+            context.Entry<T>(dbSet).State=EntityState.Deleted;
+            
+            context.SaveChanges();        
+            
         }
 
-        public T FindSelectedItem(int id)
-        {
-            myCRMContext context2 = new myCRMContext();
-            var dbSet = context2.Set<T>().Find(id);
-            // //var entity = dbSet.Create();
-          // T i =dbSet.Find(id);
-            // ////var o=context.Checks.
-             return dbSet; 
-        }
+       
 
 
 

@@ -19,6 +19,7 @@ namespace myCRM
 
         myCRMContext db= new myCRMContext();
         DbSet<T> set;
+        
 
         public Catalog(DbSet<T> set )
         {
@@ -40,7 +41,7 @@ namespace myCRM
             if (typeof(T)==typeof(Customer))
             {
                 var frCustomer = new CustomerForms();
-                frCustomer.AddCustomer += LoadDataBase;
+                frCustomer.UpdateTable += LoadDataBase;
                 frCustomer.Show();
 
             } else
@@ -76,30 +77,21 @@ namespace myCRM
 
         private void btDelete_Click(object sender, EventArgs e)
         {
-
-            if (typeof(T) == typeof(Customer))
-            {
-               var clDB = new ControlDataBase<T>();
-
-                
-                clDB.DeleteFromCatalog(clDB.FindSelectedItem(1));
-            }
-            else
-               if (typeof(T) == typeof(Seller))
+            if (dataGridView1.SelectedRows.Count != 0)
             {
 
-              
-            }
-            else
-
-            if (typeof(T) == typeof(Product))
+                int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+                var clDB = new ControlDataBase<T>();
+                clDB.DeleteFromCatalog(id);
+                LoadDataBase();
+            } else
             {
-              
-
+                MessageBox.Show("НЕ ВЫБРАНЫ СТРОКИ");
             }
+            
 
 
-            LoadDataBase();
+           
         }
     }
 }
